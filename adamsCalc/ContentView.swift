@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-import GoogleUtilities
 import GoogleMobileAds
 
 struct ContentView: View {
    
     @EnvironmentObject var calculator: Calculator
+
     
     // UI Setting for layout
     var geometryDivisor = 9
@@ -29,7 +29,6 @@ struct ContentView: View {
             return Image(systemName: "lock.fill").resizable()
         }
     }
-    
     
     // MARK: App UI
     var body: some View {
@@ -65,7 +64,8 @@ struct ContentView: View {
                             calculator.usingSavedAnswers(answer: calculator.savedAnswerArray[savedAnswer])
                         }) {
                             Text("\(calculator.savedAnswerArray[savedAnswer])").font(.system(size: 18.0))
-                        }.buttonStyle(SavedAnswersButtonStyle()).padding(.top)
+                        }.buttonStyle(SavedAnswersButtonStyle())
+                        
                     }
                 }
                 
@@ -120,6 +120,8 @@ struct ContentView: View {
                                     Text(item.rawValue)
                                         .foregroundColor(.white)
                                         .font(.system(size: 20.0))
+                                        
+                                        
                                         
                                 }.buttonStyle(NumberPadButtonStyle())
                                 }

@@ -1,0 +1,6 @@
+framework module Pods_adamsCalc {
+  umbrella header "Pods-adamsCalc-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -27,12 +27,25 @@ import SwiftUI
             configuration.label
                 .frame(width: 75, height: 25, alignment: .center)
                 .padding()
-                .background(Color(.systemGray5))
+                .background(Color(.systemGray3))
                 .cornerRadius(35.0)
                 .font(.subheadline)
             
         }
     }
+
+struct SavedAnswersButtonStyleDisabled: ButtonStyle {
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 75, height: 25, alignment: .center)
+            .padding()
+            .background(Color(.systemGray5))
+            .cornerRadius(35.0)
+            .font(.subheadline)
+        
+    }
+}
     
 
 

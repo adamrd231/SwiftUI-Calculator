@@ -54,6 +54,15 @@ class Calculator: ObservableObject, Identifiable {
     
     
     // MARK: Helper Functions
+    func checkACDisabled() -> Bool {
+        if leftNumber == "" && rightNumber == "" && operand == "" && savedAnswerArray[0] == "" && savedAnswerArray[1] == "" && savedAnswerArray[2] == "" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    
     func handleNumberInputs(title: String) {
 
         if operand == "" {

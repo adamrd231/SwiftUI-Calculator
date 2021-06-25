@@ -12,6 +12,7 @@ import GoogleMobileAds
 struct adamsCalcApp: App {
     
     var calculator = Calculator()
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
