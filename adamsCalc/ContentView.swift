@@ -59,15 +59,26 @@ struct ContentView: View {
                 
                 // Saved Answer Array
                 HStack {
-                    ForEach(0...calculator.savedAnswerArray.count - 1, id: \.self) { savedAnswer in
-                        Button( action: {
-                            calculator.usingSavedAnswers(answer: calculator.savedAnswerArray[savedAnswer])
-                        }) {
-                            Text("\(calculator.savedAnswerArray[savedAnswer])").font(.system(size: 18.0))
-                        }.buttonStyle(SavedAnswersButtonStyle())
+                    Button( action: {
+                        calculator.usingSavedAnswers(answer: calculator.savedAnswerOne)
+                    }) {
+                        Text("\(calculator.savedAnswerOne)").font(.system(size: 18.0))
+                    }.buttonStyle(SavedAnswersButtonStyle())
+                    
+                    Button( action: {
+                        calculator.usingSavedAnswers(answer: calculator.savedAnswerTwo)
+                    }) {
+                        Text("\(calculator.savedAnswerTwo)").font(.system(size: 18.0))
+                    }.buttonStyle(SavedAnswersButtonStyle())
+                    
+                    Button( action: {
+                        calculator.usingSavedAnswers(answer: calculator.savedAnswerThree)
+                    }) {
+                        Text("\(calculator.savedAnswerThree)").font(.system(size: 18.0))
+                    }.buttonStyle(SavedAnswersButtonStyle())
                         
-                    }
-                }
+                    
+                }.padding(.top)
                 
                 // Lock Button Row
                 HStack {

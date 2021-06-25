@@ -9,14 +9,51 @@ import SwiftUI
 
 class Calculator: ObservableObject, Identifiable {
     // Variables for Calculator
-    @Published var leftNumber = ""
-    @Published var rightNumber = ""
-    @Published var operand = ""
-    @Published var savedAnswerArray = ["", "", ""]
-    @Published var lockOne = false
-    @Published var lockTwo = false
-    @Published var lockThree = false
-    @Published var locksStatus = [false, true, false]
+    @Published var leftNumber = UserDefaults.standard.string(forKey: "leftNumber") ?? "" {
+        didSet {
+            UserDefaults.standard.setValue(self.leftNumber, forKey: "leftNumber")
+        }
+    }
+    @Published var rightNumber = UserDefaults.standard.string(forKey: "rightNumber") ?? "" {
+        didSet {
+            UserDefaults.standard.setValue(self.rightNumber, forKey: "rightNumber")
+        }
+    }
+    @Published var operand = UserDefaults.standard.string(forKey: "operand") ?? "" {
+        didSet {
+            UserDefaults.standard.setValue(self.operand, forKey: "operand")
+        }
+    }
+    @Published var savedAnswerOne = UserDefaults.standard.string(forKey: "savedAnswerOne") ?? "" {
+        didSet {
+            UserDefaults.standard.setValue(self.savedAnswerOne, forKey: "savedAnswerOne")
+        }
+    }
+    @Published var savedAnswerTwo = UserDefaults.standard.string(forKey: "savedAnswerTwo") ?? "" {
+    didSet {
+        UserDefaults.standard.setValue(self.savedAnswerTwo, forKey: "savedAnswerTwo")
+    }
+}
+    @Published var savedAnswerThree = UserDefaults.standard.string(forKey: "savedAnswerThree") ?? "" {
+        didSet {
+            UserDefaults.standard.setValue(self.savedAnswerThree, forKey: "savedAnswerThree")
+        }
+    }
+    @Published var lockOne = UserDefaults.standard.bool(forKey: "lockOne") ?? false {
+        didSet {
+            UserDefaults.standard.setValue(self.lockOne, forKey: "lockOne")
+        }
+    }
+    @Published var lockTwo = UserDefaults.standard.bool(forKey: "lockTwo") ?? false {
+        didSet {
+            UserDefaults.standard.setValue(self.lockTwo, forKey: "lockTwo")
+        }
+    }
+    @Published var lockThree = UserDefaults.standard.bool(forKey: "lockThree") ?? false {
+        didSet {
+            UserDefaults.standard.setValue(self.lockThree, forKey: "lockThree")
+        }
+    }
 
     // UI Settings that users might be able to adjust
     @Published var decimalPlaces = 2
@@ -55,7 +92,7 @@ class Calculator: ObservableObject, Identifiable {
     
     // MARK: Helper Functions
     func checkACDisabled() -> Bool {
-        if leftNumber == "" && rightNumber == "" && operand == "" && savedAnswerArray[0] == "" && savedAnswerArray[1] == "" && savedAnswerArray[2] == "" {
+        if leftNumber == "" && rightNumber == "" && operand == "" && savedAnswerOne == "" && savedAnswerTwo == "" && savedAnswerThree == "" {
             return true
         } else {
             return false
@@ -230,13 +267,13 @@ class Calculator: ObservableObject, Identifiable {
         operand = ""
         
         if lockOne == false {
-            savedAnswerArray[0] = ""
+            savedAnswerOne = ""
         }
         if lockTwo == false {
-            savedAnswerArray[1] = ""
+            savedAnswerTwo = ""
         }
         if lockThree == false {
-            savedAnswerArray[2] = ""
+            savedAnswerThree = ""
         }
         
         
@@ -260,19 +297,19 @@ class Calculator: ObservableObject, Identifiable {
     
     func fillAnswerArrays(numberAsString: String) {
         
-        if savedAnswerArray[0] == "" && lockOne == false {
-            savedAnswerArray[0] = numberAsString
-        } else if savedAnswerArray[1] == "" && lockTwo == false {
-            savedAnswerArray[1] = numberAsString
-        } else if savedAnswerArray[2] == "" && lockThree == false {
-            savedAnswerArray[2] = numberAsString
+        if savedAnswerOne == "" && lockOne == false {
+            savedAnswerOne = numberAsString
+        } else if savedAnswerTwo == "" && lockTwo == false {
+            savedAnswerTwo = numberAsString
+        } else if savedAnswerThree == "" && lockThree == false {
+            savedAnswerThree = numberAsString
            
-        } else if savedAnswerArray[2] != "" && lockThree == false {
-            savedAnswerArray[2] = numberAsString
-        } else if savedAnswerArray[1] != "" && lockTwo == false  {
-            savedAnswerArray[1] = numberAsString
-        } else if savedAnswerArray[0] != "" && lockOne == false {
-            savedAnswerArray[0] = numberAsString
+        } else if savedAnswerThree != "" && lockThree == false {
+            savedAnswerThree = numberAsString
+        } else if savedAnswerTwo != "" && lockTwo == false  {
+            savedAnswerTwo = numberAsString
+        } else if savedAnswerOne != "" && lockOne == false {
+            savedAnswerOne = numberAsString
         }
     }
     
