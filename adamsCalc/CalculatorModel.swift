@@ -208,19 +208,19 @@ class Calculator: ObservableObject, Identifiable {
             // Use number and operator inputs to do math
             let doubleLeftNumber = Float(leftNumber)
             let doubleRightNumber = Float(rightNumber)
-            var answer:Float = 0
+            var answer:String
             
             if operand == "*" || operand  == "x" {
-                answer = doubleLeftNumber! * doubleRightNumber!
+                answer = (doubleLeftNumber! * doubleRightNumber!).clean
             } else if operand == "-" {
-                answer = doubleLeftNumber! - doubleRightNumber!
+                answer = (doubleLeftNumber! - doubleRightNumber!).clean
             } else if operand == "+" {
-                answer = doubleLeftNumber! + doubleRightNumber!
+                answer = (doubleLeftNumber! + doubleRightNumber!).clean
             } else {
-                answer = doubleLeftNumber! / doubleRightNumber!
+                answer = (doubleLeftNumber! / doubleRightNumber!).clean
             }
             
-            leftNumber = String(format: "%.\(decimalPlaces)f", answer)
+            leftNumber = answer
             operand = newOperator
             rightNumber = ""
             

@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6605370F26850173002AABF4 /* GoogleAdMob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605370E26850173002AABF4 /* GoogleAdMob.swift */; };
-		6605371226850726002AABF4 /* InterstitialAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605371126850726002AABF4 /* InterstitialAds.swift */; };
 		667FEB83267BC561009FBA5C /* adamsCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FEB82267BC561009FBA5C /* adamsCalcApp.swift */; };
 		667FEB85267BC561009FBA5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FEB84267BC561009FBA5C /* ContentView.swift */; };
 		667FEB87267BC562009FBA5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667FEB86267BC562009FBA5C /* Assets.xcassets */; };
 		667FEB8A267BC562009FBA5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667FEB89267BC562009FBA5C /* Preview Assets.xcassets */; };
 		667FEBAD267E7191009FBA5C /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FEBAC267E7191009FBA5C /* CalculatorModel.swift */; };
+		668188B8268BB76F00252CD6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668188B7268BB76F00252CD6 /* StoreKit.framework */; };
+		668188BC268BB84600252CD6 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668188BB268BB84600252CD6 /* StoreManager.swift */; };
 		66DE412826812082004F8539 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DE412726812082004F8539 /* ButtonStyles.swift */; };
 		6E4202ABCA1B9AA0D0788AE5 /* Pods_adamsCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E208D9E129F3FCED02168DB /* Pods_adamsCalc.framework */; };
 /* End PBXBuildFile section */
@@ -21,7 +22,6 @@
 /* Begin PBXFileReference section */
 		330D8127D3C40FB2BC82B1D0 /* Pods-adamsCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adamsCalc.debug.xcconfig"; path = "Target Support Files/Pods-adamsCalc/Pods-adamsCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		6605370E26850173002AABF4 /* GoogleAdMob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdMob.swift; sourceTree = "<group>"; };
-		6605371126850726002AABF4 /* InterstitialAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAds.swift; sourceTree = "<group>"; };
 		667FEB7F267BC561009FBA5C /* adamsCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = adamsCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667FEB82267BC561009FBA5C /* adamsCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adamsCalcApp.swift; sourceTree = "<group>"; };
 		667FEB84267BC561009FBA5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
@@ -29,6 +29,8 @@
 		667FEB89267BC562009FBA5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		667FEB8B267BC562009FBA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		667FEBAC267E7191009FBA5C /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		668188B7268BB76F00252CD6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		668188BB268BB84600252CD6 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		66DE412726812082004F8539 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		8E208D9E129F3FCED02168DB /* Pods_adamsCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_adamsCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4540F745BEC64E298894EEC /* Pods-adamsCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adamsCalc.release.xcconfig"; path = "Target Support Files/Pods-adamsCalc/Pods-adamsCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4202ABCA1B9AA0D0788AE5 /* Pods_adamsCalc.framework in Frameworks */,
+				668188B8268BB76F00252CD6 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,9 +73,9 @@
 				667FEB82267BC561009FBA5C /* adamsCalcApp.swift */,
 				667FEB84267BC561009FBA5C /* ContentView.swift */,
 				6605370E26850173002AABF4 /* GoogleAdMob.swift */,
-				6605371126850726002AABF4 /* InterstitialAds.swift */,
 				66DE412726812082004F8539 /* ButtonStyles.swift */,
 				667FEBAC267E7191009FBA5C /* CalculatorModel.swift */,
+				668188BB268BB84600252CD6 /* StoreManager.swift */,
 				667FEB86267BC562009FBA5C /* Assets.xcassets */,
 				667FEB8B267BC562009FBA5C /* Info.plist */,
 				667FEB88267BC562009FBA5C /* Preview Content */,
@@ -100,6 +103,7 @@
 		FA4102F84AA4F77227F9D7B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				668188B7268BB76F00252CD6 /* StoreKit.framework */,
 				8E208D9E129F3FCED02168DB /* Pods_adamsCalc.framework */,
 			);
 			name = Frameworks;
@@ -220,8 +224,8 @@
 			files = (
 				667FEB85267BC561009FBA5C /* ContentView.swift in Sources */,
 				667FEB83267BC561009FBA5C /* adamsCalcApp.swift in Sources */,
-				6605371226850726002AABF4 /* InterstitialAds.swift in Sources */,
 				66DE412826812082004F8539 /* ButtonStyles.swift in Sources */,
+				668188BC268BB84600252CD6 /* StoreManager.swift in Sources */,
 				667FEBAD267E7191009FBA5C /* CalculatorModel.swift in Sources */,
 				6605370F26850173002AABF4 /* GoogleAdMob.swift in Sources */,
 			);
@@ -362,7 +366,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rdConcepts.adamsCalc;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adam-calc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -385,7 +390,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rdConcepts.adamsCalc;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adam-calc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

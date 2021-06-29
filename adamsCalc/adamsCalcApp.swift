@@ -7,17 +7,27 @@
 
 import SwiftUI
 import GoogleMobileAds
+import StoreKit
 
 @main
 struct adamsCalcApp: App {
     
-    var calculator = Calculator()
+    @StateObject var calculator = Calculator()
+    @StateObject var storeManager = StoreManager()
+    
+    
+    var productIds = ["remove_advertising"]
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(calculator)
+            ContentView(storeManager: storeManager).environmentObject(calculator)
+                .onAppear(perform: {
+                    SKPaymentQueue.default().add(storeManager)
+                    storeManager.getProducts(productIDs: productIds)
+                    
+            })
         }
     }
 }
@@ -28,4 +38,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
+
 }
+
