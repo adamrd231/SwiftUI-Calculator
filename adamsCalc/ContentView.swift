@@ -7,6 +7,8 @@
 
 import SwiftUI
 import GoogleMobileAds
+import AppTrackingTransparency
+import AdSupport
 
 struct ContentView: View {
    
@@ -44,6 +46,33 @@ struct ContentView: View {
      func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
        print("Ad did dismiss full screen content.")
      }
+    
+    func requestIDFA() {
+      ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+        // Tracking authorization completed. Start loading ads here.
+        if storeManager.purchasedRemoveAds == false {
+            if playedInterstitial == false {
+                let request = GADRequest()
+                    GADInterstitialAd.load(withAdUnitID:"ca-app-pub-4186253562269967/2135766372",
+                            request: request, completionHandler: { [self] ad, error in
+                                // Check if there is an error
+                                if let error = error {
+                                    return
+                                }
+                                // If no errors, create an ad and serve it
+                                interstitial = ad
+                                let root = UIApplication.shared.windows.first?.rootViewController
+                                    self.interstitial!.present(fromRootViewController: root!)
+                                    // Let user use the app until the next time ad free
+                                    playedInterstitial = true
+                                }
+                            )
+                                } else {
+                                    return
+                                }
+        }
+      })
+    }
 
     
     // MARK: App UI
@@ -52,7 +81,7 @@ struct ContentView: View {
         TabView {
             
             GeometryReader { geometry in
-                ZStack(alignment: .top) {
+                ZStack(alignment: .center) {
                 // Setup backgound Color
                 Color(.systemGray6).edgesIgnoringSafeArea([.top,.bottom])
                 
@@ -171,27 +200,7 @@ struct ContentView: View {
                 
             }
             .onAppear(perform: {
-                if storeManager.purchasedRemoveAds == false {
-                    if playedInterstitial == false {
-                        let request = GADRequest()
-                            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-4186253562269967/2135766372",
-                                    request: request, completionHandler: { [self] ad, error in
-                                        // Check if there is an error
-                                        if let error = error {
-                                            return
-                                        }
-                                        // If no errors, create an ad and serve it
-                                        interstitial = ad
-                                        let root = UIApplication.shared.windows.first?.rootViewController
-                                            self.interstitial!.present(fromRootViewController: root!)
-                                            // Let user use the app until the next time ad free
-                                            playedInterstitial = true
-                                        }
-                                    )
-                                        } else {
-                                            return
-                                        }
-                }
+                requestIDFA()
             })
             
             // Second Screen
