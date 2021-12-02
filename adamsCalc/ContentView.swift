@@ -53,7 +53,7 @@ struct ContentView: View {
         if storeManager.purchasedRemoveAds == false {
             if playedInterstitial == false {
                 let request = GADRequest()
-                    GADInterstitialAd.load(withAdUnitID:"ca-app-pub-4186253562269967/2135766372",
+                    GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/1033173712",
                             request: request, completionHandler: { [self] ad, error in
                                 // Check if there is an error
                                 if let error = error {

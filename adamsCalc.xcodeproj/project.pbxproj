@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6605370F26850173002AABF4 /* GoogleAdMob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605370E26850173002AABF4 /* GoogleAdMob.swift */; };
+		663E05C12717D701006E0259 /* NatureFMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E05C02717D701006E0259 /* NatureFMTests.swift */; };
 		667FEB83267BC561009FBA5C /* adamsCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FEB82267BC561009FBA5C /* adamsCalcApp.swift */; };
 		667FEB85267BC561009FBA5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FEB84267BC561009FBA5C /* ContentView.swift */; };
 		667FEB87267BC562009FBA5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667FEB86267BC562009FBA5C /* Assets.xcassets */; };
@@ -22,6 +23,9 @@
 /* Begin PBXFileReference section */
 		330D8127D3C40FB2BC82B1D0 /* Pods-adamsCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adamsCalc.debug.xcconfig"; path = "Target Support Files/Pods-adamsCalc/Pods-adamsCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		6605370E26850173002AABF4 /* GoogleAdMob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdMob.swift; sourceTree = "<group>"; };
+		663E05BE2717D701006E0259 /* NatureFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NatureFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		663E05C02717D701006E0259 /* NatureFMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureFMTests.swift; sourceTree = "<group>"; };
+		663E05C22717D701006E0259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		667FEB7F267BC561009FBA5C /* adamsCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = adamsCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667FEB82267BC561009FBA5C /* adamsCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adamsCalcApp.swift; sourceTree = "<group>"; };
 		667FEB84267BC561009FBA5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
@@ -37,6 +41,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		663E05BB2717D701006E0259 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		667FEB7C267BC561009FBA5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,10 +60,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		663E05BF2717D701006E0259 /* NatureFMTests */ = {
+			isa = PBXGroup;
+			children = (
+				663E05C02717D701006E0259 /* NatureFMTests.swift */,
+				663E05C22717D701006E0259 /* Info.plist */,
+			);
+			path = NatureFMTests;
+			sourceTree = "<group>";
+		};
 		667FEB76267BC561009FBA5C = {
 			isa = PBXGroup;
 			children = (
 				667FEB81267BC561009FBA5C /* adamsCalc */,
+				663E05BF2717D701006E0259 /* NatureFMTests */,
 				667FEB80267BC561009FBA5C /* Products */,
 				D648E1B65D5807A98D7005B7 /* Pods */,
 				FA4102F84AA4F77227F9D7B0 /* Frameworks */,
@@ -63,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				667FEB7F267BC561009FBA5C /* adamsCalc.app */,
+				663E05BE2717D701006E0259 /* NatureFMTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +134,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		663E05BD2717D701006E0259 /* NatureFMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 663E05C52717D701006E0259 /* Build configuration list for PBXNativeTarget "NatureFMTests" */;
+			buildPhases = (
+				663E05BA2717D701006E0259 /* Sources */,
+				663E05BB2717D701006E0259 /* Frameworks */,
+				663E05BC2717D701006E0259 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NatureFMTests;
+			productName = NatureFMTests;
+			productReference = 663E05BE2717D701006E0259 /* NatureFMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		667FEB7E267BC561009FBA5C /* adamsCalc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 667FEB8E267BC562009FBA5C /* Build configuration list for PBXNativeTarget "adamsCalc" */;
@@ -137,9 +176,12 @@
 		667FEB77267BC561009FBA5C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					663E05BD2717D701006E0259 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					667FEB7E267BC561009FBA5C = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -159,11 +201,19 @@
 			projectRoot = "";
 			targets = (
 				667FEB7E267BC561009FBA5C /* adamsCalc */,
+				663E05BD2717D701006E0259 /* NatureFMTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		663E05BC2717D701006E0259 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		667FEB7D267BC561009FBA5C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +268,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		663E05BA2717D701006E0259 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				663E05C12717D701006E0259 /* NatureFMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		667FEB7B267BC561009FBA5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +292,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		663E05C32717D701006E0259 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6SFM579B5E;
+				INFOPLIST_FILE = NatureFMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = design.rdConcepts.NatureFMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		663E05C42717D701006E0259 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6SFM579B5E;
+				INFOPLIST_FILE = NatureFMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = design.rdConcepts.NatureFMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		667FEB8C267BC562009FBA5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -401,6 +499,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		663E05C52717D701006E0259 /* Build configuration list for PBXNativeTarget "NatureFMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				663E05C32717D701006E0259 /* Debug */,
+				663E05C42717D701006E0259 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		667FEB7A267BC561009FBA5C /* Build configuration list for PBXProject "adamsCalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
